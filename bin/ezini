@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/../vendor/autoload.php';
+
+use Opencontent\IniTools\Command;
+use Symfony\Component\Console\Application;
+
+$application = new Application('ezini', '0.1 alpha');
+$application->add(new Command\SiteaccessGeneratorCommand());
+$application->add(new Command\ReaderCommand());
+$application->add(new Command\WriterCommand());
+$application->add(new Command\SymlinkGeneratorCommand());
+$application->add(new Command\CopyCommand());
+$application->add(new Command\InstanceCommand());
+$application->add(new Command\NginxCommand());
+$application->run();

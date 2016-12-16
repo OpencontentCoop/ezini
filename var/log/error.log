@@ -1,0 +1,52 @@
+[ Nov 27 2015 18:42:48 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:47:08 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:47:09 ] [] eZINI::variable:
+Undefined group: 'test' in site.ini
+[ Nov 27 2015 18:47:20 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:47:34 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:50:55 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:51:18 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:52:27 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:52:29 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:52:49 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:53:19 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:53:20 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:53:51 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:54:00 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:54:25 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:55:46 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:55:53 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:56:03 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:56:03 ] [] eZINI::variable:
+Undefined group: 'SiteSettings' in site.ini.append
+[ Nov 27 2015 18:56:11 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:56:11 ] [] eZINI::variable:
+Undefined group: 'SiteSettings' in site.ini.append.php
+[ Nov 27 2015 18:56:15 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:57:31 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 18:59:09 ] [] eZSys::serverVariable:
+Server variable 'REQUEST_URI' does not exist
+[ Nov 27 2015 21:09:56 ] [] eZINI::variable:
+Undefined group: 'SiteSettings' in cla
+[ Nov 27 2015 21:10:23 ] [] eZINI::variable:
+Undefined group: 'SiteSettings' in cla
