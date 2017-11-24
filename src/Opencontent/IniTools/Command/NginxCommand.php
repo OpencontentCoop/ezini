@@ -3,15 +3,12 @@
 namespace Opencontent\IniTools\Command;
 
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 use RomanPitak\Nginx\Config\Scope;
 use RomanPitak\Nginx\Config\Directive;
 
@@ -53,7 +50,7 @@ class NginxCommand extends Command
             )
             ->addOption(
                 'document-root', 'r',
-                InputOption::VALUE_REQUIRED, 'Document root  (defaul: /home/httpd/example/html )'
+                InputOption::VALUE_REQUIRED, 'Document root  (default: /home/httpd/example/html )'
             )
             ->addOption(
                 'dir', 'd',
@@ -62,6 +59,10 @@ class NginxCommand extends Command
             ->addOption(
                 'full-path', 'f',
                 InputOption::VALUE_NONE, 'Return full filepath instead of filename'
+            )
+            ->addOption(
+                'show-aliases', 'a',
+                InputOption::VALUE_NONE, 'Return all aliases directive found in file'
             );
     }
 
@@ -75,6 +76,7 @@ class NginxCommand extends Command
 
         $sourceFinder = new Finder();
         $sourceFinder->files()->in($dir);
+
 
         $url = trim($input->getOption('url'), "''");
         $documentRoot = trim($input->getOption('document-root'), "''");
@@ -103,24 +105,69 @@ class NginxCommand extends Command
             $this->found = 0;
             $this->walkScope($scope, $url, $documentRoot);
             if ($this->found >= $this->matches) {
-                $results[] = $path;
+                $item = array('path' => $path);
+                if ($input->getOption('show-aliases')) {
+                    $item['aliases'] = $this->findAliases($scope);
+                }
+                $results[] = $item;
             }
-//            if ( $this->found > 0 )
-//                $output->writeln($this->found . ' ' . $this->matches . ' ' . $path);
         }
 
         if ($this->matches > 0) {
             if (count($results) == 0) {
                 throw new \Exception('Not found');
             } else {
-                foreach ($results as $result) {
-                    if ( !empty( $fullPath ) )
-                        $output->writeln($result);
-                    else
-                        $output->writeln(basename($result));
+                foreach ($results as $item) {
+                    if (!empty( $fullPath )) {
+                        $output->writeln($item['path']);
+                    } else {
+                        $output->writeln(basename($item['path']));
+                    }
+                    if ($input->getOption('show-aliases')) {
+                        foreach ($item['aliases'] as $alias) {
+                            $output->writeln('    ' . $alias);
+                        }
+                    }
                 }
             }
         }
+    }
+
+    protected function findAliases(Scope $scope)
+    {
+        $aliases = array();
+        foreach ($scope->getDirectives() as $directive) {
+            $aliases = array_merge(
+                $aliases,
+                $this->findAliasesInDirective($directive)
+            );
+        }
+
+        return $aliases;
+    }
+
+    protected function findAliasesInDirective(Directive $directive)
+    {
+        $aliases = array();
+        if ($directive->getChildScope() instanceof Scope) {
+            foreach ($directive->getChildScope()->getDirectives() as $subDirective) {
+                $aliases = array_merge(
+                    $aliases,
+                    $this->findAliasesInDirective($subDirective)
+                );
+            }
+        }else{
+            if (strpos((string)$directive, 'server_name') !== false) {
+                $cleanDirective = str_replace('server_name', '', $directive);
+                $aliasList = explode(' ', trim($cleanDirective));
+                $aliases = array_merge(
+                    $aliases,
+                    $aliasList
+                );
+            }
+        }
+
+        return array_unique($aliases);
     }
 
     protected function walkScope(Scope $scope, $url, $documentRoot)
@@ -131,9 +178,9 @@ class NginxCommand extends Command
             $this->walkDirective($directive);
         }
 
-        if ($documentRoot && $this->documentRoot){
+        if ($documentRoot && $this->documentRoot) {
             foreach ($scope->getDirectives() as $directive) {
-                $this->searchInInclude($directive,$documentRoot);
+                $this->searchInInclude($directive, $documentRoot);
             }
         }
     }
@@ -148,13 +195,11 @@ class NginxCommand extends Command
             if ($this->url && strpos((string)$directive, 'server_name') !== false) {
                 if (strpos((string)$directive, $this->url) !== false) {
                     $this->found++;
-                    $this->url = null;
                 }
             }
             if ($this->documentRoot && strpos((string)$directive, 'root') === 0) {
                 if (strpos((string)$directive, $this->documentRoot) !== false) {
                     $this->found++;
-                    $this->documentRoot = null;
                 }
             }
         }
@@ -167,7 +212,7 @@ class NginxCommand extends Command
                 $this->searchInInclude($directive, $documentRoot);
             }
         } else {
-            if ( strpos((string)$directive, 'include') !== false) {
+            if (strpos((string)$directive, 'include') !== false) {
                 if (strpos((string)$directive, 'nginx') !== false) {
                     $path = trim(str_replace('include', '', $directive));
                     $path = trim(str_replace(';', '', $path));

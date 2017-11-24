@@ -13,4 +13,5 @@ $application->add(new Command\SymlinkGeneratorCommand());
 $application->add(new Command\CopyCommand());
 $application->add(new Command\InstanceCommand());
 $application->add(new Command\NginxCommand());
+$application->add(new Command\MigrateSiteaccess());
 $application->run();

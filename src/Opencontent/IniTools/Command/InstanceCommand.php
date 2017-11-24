@@ -35,6 +35,7 @@ class InstanceCommand extends Command
     protected $commands = array(
         'create',
         'read',
+        'search',
         'run'
     );
 

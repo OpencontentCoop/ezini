@@ -20,7 +20,7 @@
         "require-dev": {
             "league/phpunit-coverage-listener": "~1.0"
         },
-        "time": "2013-08-27 17:43:25",
+        "time": "2013-08-27T17:43:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -72,7 +72,7 @@
         "require-dev": {
             "league/phpunit-coverage-listener": "~1.0"
         },
-        "time": "2013-10-15 22:58:04",
+        "time": "2013-10-15T22:58:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -126,7 +126,7 @@
             "herrera-io/phpunit-test-case": "1.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2014-05-27 05:29:25",
+        "time": "2014-05-27T05:29:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -175,7 +175,7 @@
         "require": {
             "php": "^5.3 || ^7.0"
         },
-        "time": "2015-11-21 02:21:41",
+        "time": "2015-11-21T02:21:41+00:00",
         "bin": [
             "bin/jsonlint"
         ],
@@ -231,7 +231,7 @@
             "mikey179/vfsstream": "1.1.0",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-10-30 16:51:34",
+        "time": "2013-10-30T16:51:34+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -292,7 +292,7 @@
             "mikey179/vfsstream": "1.1.0",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-11-09 17:13:13",
+        "time": "2013-11-09T17:13:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -351,7 +351,7 @@
             "herrera-io/phpunit-test-case": "1.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2014-11-05 15:29:01",
+        "time": "2014-11-05T15:29:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -406,7 +406,7 @@
             "phpunit/phpunit": "4.0.*",
             "satooshi/php-coveralls": "dev-master"
         },
-        "time": "2015-07-04 07:35:09",
+        "time": "2015-07-04T07:35:09+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -463,7 +463,7 @@
             "herrera-io/annotations": "For compacting annotated docblocks.",
             "phpseclib/phpseclib": "For verifying OpenSSL signed phars without the phar extension."
         },
-        "time": "2014-12-03 23:26:45",
+        "time": "2014-12-03T23:26:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -511,7 +511,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2014-09-09 13:34:57",
+        "time": "2014-09-09T13:34:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -572,7 +572,7 @@
             "doctrine/cache": "1.*",
             "phpunit/phpunit": "4.*"
         },
-        "time": "2015-08-31 12:32:49",
+        "time": "2015-08-31T12:32:49+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -642,7 +642,7 @@
             "herrera-io/phpunit-test-case": "1.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2014-02-03 17:34:08",
+        "time": "2014-02-03T17:34:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -692,7 +692,7 @@
         "require": {
             "php": ">=5.3.9"
         },
-        "time": "2016-02-22 15:02:30",
+        "time": "2016-02-22T15:02:30+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -743,7 +743,7 @@
         "require": {
             "php": ">=5.3.9"
         },
-        "time": "2016-02-02 13:33:15",
+        "time": "2016-02-02T13:33:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -794,7 +794,7 @@
         "require": {
             "php": ">=5.3.9"
         },
-        "time": "2016-02-22 16:12:45",
+        "time": "2016-02-22T16:12:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -848,7 +848,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2016-01-20 09:13:37",
+        "time": "2016-01-20T09:13:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -917,7 +917,7 @@
             "symfony/event-dispatcher": "",
             "symfony/process": ""
         },
-        "time": "2016-02-28 16:20:50",
+        "time": "2016-02-28T16:20:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -980,7 +980,7 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
             "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
         },
-        "time": "2016-01-18 17:07:21",
+        "time": "2016-01-18T17:07:21+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1064,7 +1064,7 @@
             "phpdocumentor/phpdocumentor": "~2",
             "phpunit/phpunit": "~3.7"
         },
-        "time": "2016-01-25 15:43:01",
+        "time": "2016-01-25T15:43:01+00:00",
         "bin": [
             "bin/validate-json"
         ],
@@ -1145,7 +1145,7 @@
         "suggest": {
             "ext-openssl": "To accelerate private key generation."
         },
-        "time": "2016-03-05 17:46:44",
+        "time": "2016-03-05T17:46:44+00:00",
         "bin": [
             "bin/box"
         ],
@@ -1200,7 +1200,7 @@
             "codacy/coverage": "dev-master",
             "codeclimate/php-test-reporter": "dev-master"
         },
-        "time": "2016-01-31 19:44:23",
+        "time": "2016-01-31T19:44:23+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -1256,7 +1256,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-03-04 07:55:57",
+        "time": "2016-03-04T07:55:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
